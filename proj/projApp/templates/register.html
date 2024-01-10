@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel = "stylesheet" href="CSS/normalize.css">
+        <link rel = "stylesheet" href="CSS/style.css">
+        <title>
+            title
+        </title>
+    </head>
+    <main>
+        main
+        <body>
+            body
+            <form method="post" action="/register/">
+                {% csrf_token %}
+                <input name="email" type="email" value="e@mail.com"/>
+                <input name="password" type="text" value="password"/>
+                <input type="submit" value="REGISTER">
+            </form>
+        </body>
+    </main>
+    <footer>
+        footer
+    </footer>
+</html>

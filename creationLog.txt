@@ -1,0 +1,145 @@
+Microsoft Windows [Version 10.0.19045.3803]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+C:\Users\Geloo>cd C:\Users\Geloo\Documents\proj
+
+C:\Users\Geloo\Documents\proj>py -m pip install pipenv
+Requirement already satisfied: pipenv in c:\users\geloo\appdata\local\programs\python\python311\lib\site-packages (2023.11.15)
+Requirement already satisfied: certifi in c:\users\geloo\appdata\local\programs\python\python311\lib\site-packages (from pipenv) (2023.11.17)
+Requirement already satisfied: setuptools>=67 in c:\users\geloo\appdata\local\programs\python\python311\lib\site-packages (from pipenv) (69.0.3)
+Requirement already satisfied: virtualenv>=20.24.2 in c:\users\geloo\appdata\local\programs\python\python311\lib\site-packages (from pipenv) (20.25.0)
+Requirement already satisfied: distlib<1,>=0.3.7 in c:\users\geloo\appdata\local\programs\python\python311\lib\site-packages (from virtualenv>=20.24.2->pipenv) (0.3.8)
+Requirement already satisfied: filelock<4,>=3.12.2 in c:\users\geloo\appdata\local\programs\python\python311\lib\site-packages (from virtualenv>=20.24.2->pipenv) (3.13.1)
+Requirement already satisfied: platformdirs<5,>=3.9.1 in c:\users\geloo\appdata\local\programs\python\python311\lib\site-packages (from virtualenv>=20.24.2->pipenv) (4.1.0)
+
+[notice] A new release of pip is available: 23.2.1 -> 23.3.2
+[notice] To update, run: C:\Users\Geloo\AppData\Local\Programs\Python\Python311\python.exe -m pip install --upgrade pip
+
+C:\Users\Geloo\Documents\proj>py -m pipenv shell
+Creating a virtualenv for this project...
+Pipfile: C:\Users\Geloo\Documents\proj\Pipfile
+Using default python from C:\Users\Geloo\AppData\Local\Programs\Python\Python311\python.exe (3.11.7) to create virtualenv...
+[ ===] Creating virtual environment...created virtual environment CPython3.11.7.final.0-64 in 3936ms
+  creator CPython3Windows(dest=C:\Users\Geloo\.virtualenvs\proj-WnSaJbJu, clear=False, no_vcs_ignore=False, global=False)
+  seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=C:\Users\Geloo\AppData\Local\pypa\virtualenv)
+    added seed packages: pip==23.3.2, setuptools==69.0.3, wheel==0.42.0
+  activators BashActivator,BatchActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
+
+Successfully created virtual environment!
+Virtualenv location: C:\Users\Geloo\.virtualenvs\proj-WnSaJbJu
+Creating a Pipfile for this project...
+Launching subshell in virtual environment...
+Microsoft Windows [Version 10.0.19045.3803]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+(proj-WnSaJbJu) C:\Users\Geloo\Documents\proj>py -m pipenv install django==5.0
+C:\Users\Geloo\.virtualenvs\proj-WnSaJbJu\Scripts\python.exe: No module named pipenv
+
+(proj-WnSaJbJu) C:\Users\Geloo\Documents\proj>py -m pip install django==5.0
+Collecting django==5.0
+  Using cached Django-5.0-py3-none-any.whl.metadata (4.1 kB)
+Collecting asgiref>=3.7.0 (from django==5.0)
+  Using cached asgiref-3.7.2-py3-none-any.whl.metadata (9.2 kB)
+Collecting sqlparse>=0.3.1 (from django==5.0)
+  Using cached sqlparse-0.4.4-py3-none-any.whl (41 kB)
+Collecting tzdata (from django==5.0)
+  Using cached tzdata-2023.4-py2.py3-none-any.whl.metadata (1.4 kB)
+Using cached Django-5.0-py3-none-any.whl (8.1 MB)
+Using cached asgiref-3.7.2-py3-none-any.whl (24 kB)
+Using cached tzdata-2023.4-py2.py3-none-any.whl (346 kB)
+Installing collected packages: tzdata, sqlparse, asgiref, django
+Successfully installed asgiref-3.7.2 django-5.0 sqlparse-0.4.4 tzdata-2023.4
+
+(proj-WnSaJbJu) C:\Users\Geloo\Documents\proj>py -m django startproject proj
+
+(proj-WnSaJbJu) C:\Users\Geloo\Documents\proj>C:\Users\Geloo\Documents\proj\proj
+"C:\Users\Geloo\Documents\proj\proj" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+(proj-WnSaJbJu) C:\Users\Geloo\Documents\proj>cd C:\Users\Geloo\Documents\proj\proj
+
+(proj-WnSaJbJu) C:\Users\Geloo\Documents\proj\proj>py -m django startapp projApp
+
+(proj-WnSaJbJu) C:\Users\Geloo\Documents\proj\proj>cd C:\Users\Geloo\Documents\proj
+
+(proj-WnSaJbJu) C:\Users\Geloo\Documents\proj>py manage.py migrate
+C:\Users\Geloo\AppData\Local\Programs\Python\Python311\python.exe: can't open file 'C:\\Users\\Geloo\\Documents\\proj\\manage.py': [Errno 2] No such file or directory
+
+(proj-WnSaJbJu) C:\Users\Geloo\Documents\proj>cd C:\Users\Geloo\Documents\proj\proj
+
+(proj-WnSaJbJu) C:\Users\Geloo\Documents\proj\proj>py manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying sessions.0001_initial... OK
+
+(proj-WnSaJbJu) C:\Users\Geloo\Documents\proj\proj>py -m django createsuperuser
+No Django settings specified.
+Unknown command: 'createsuperuser'
+Type 'python -m django help' for usage.
+
+(proj-WnSaJbJu) C:\Users\Geloo\Documents\proj\proj>py -m django help
+
+Type 'python -m django help <subcommand>' for help on a specific subcommand.
+
+Available subcommands:
+
+[django]
+    check
+    compilemessages
+    createcachetable
+    dbshell
+    diffsettings
+    dumpdata
+    flush
+    inspectdb
+    loaddata
+    makemessages
+    makemigrations
+    migrate
+    optimizemigration
+    runserver
+    sendtestemail
+    shell
+    showmigrations
+    sqlflush
+    sqlmigrate
+    sqlsequencereset
+    squashmigrations
+    startapp
+    startproject
+    test
+    testserver
+Note that only Django core commands are listed as settings are not properly configured (error: Requested setting INSTALLED_APPS, but settings are not configured. You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.).
+
+(proj-WnSaJbJu) C:\Users\Geloo\Documents\proj\proj>py manage.py createsuperuser
+Username (leave blank to use 'geloo'): geloo
+Email address: ich.bin.oleg.2004@gmail.com
+Password:
+Password (again):
+Superuser created successfully.
+
+(proj-WnSaJbJu) C:\Users\Geloo\Documents\proj\proj>py manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  No migrations to apply.
+
+(proj-WnSaJbJu) C:\Users\Geloo\Documents\proj\proj>
