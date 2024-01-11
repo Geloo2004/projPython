@@ -16,7 +16,9 @@ def register(request):
     if not (email == None or password == None):
         try:
             User.objects.create(email=email,password=password)
-        except
-            return render(request,'register.html')
+            return render(request,'register.html', context={'message': 'success'})
+        except Exception as e:
+            return render(request,'register.html', context={'message': e})
     else:
         print('nonetype')
+        return render(request,'register.html', context={'message': 'noneType'})

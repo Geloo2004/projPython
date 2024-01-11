@@ -20,5 +20,6 @@ from projApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('main/', views.main)
+    path('main/', views.main),
+    path('register/', views.register)
 ]
