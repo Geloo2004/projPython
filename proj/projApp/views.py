@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from models import *
-import models
+from projApp.models import *
+
 # Create your views here.
 
 @csrf_exempt
@@ -16,8 +16,10 @@ def register(request):
     if not (email == None or password == None):
         try:
             User.objects.create(email=email,password=password)
+            print('success')
             return render(request,'register.html', context={'message': 'success'})
         except Exception as e:
+            print('no success')
             return render(request,'register.html', context={'message': e})
     else:
         print('nonetype')

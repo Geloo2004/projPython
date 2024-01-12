@@ -4,5 +4,9 @@ from projApp.models import *
 
 # Register your models here.
 
-django.contrib.admin.register(User)
-django.contrib.admin.register(Vacancy)
+admin.site.register(User)
+admin.site.register(Vacancy)
+admin.site.register(Skills)
+
+admin.site.register(UserSkills)
+admin.site.register(VacancySkills)
